@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Inventory management</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		    
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <link href="{{url_for('static', filename = 'flat-ui.css')}}" rel="stylesheet">
+    <link href="{{url_for('static',filename = 'demo.css')}}" rel="stylesheet">
+	    <link href = "{{url_for('static',filename = 'style.css')}}" rel = 'stylesheet'>
+      <link rel = 'shortcut icon' href = "{{url_for('static',filename = 'MAC.ico')}}">
+    </head>
+	<body>
+    <style>
+      *{
+        margin: 0px;
+        padding: 0px;
+      }
+.INVEN{
+  color:rgb(206, 96, 23);
+  margin-top:20px;
+  margin-left:30%;
+  margin-bottom: 20px;
+}
+.form-control{
+  width: 500px;
+  margin-left: 30%;
+  margin-top:10px;
+}
+.form-label{
+  margin-left: 200px;
+}
+.form-control ::placeholder{
+  align-self: center;
+}
+#username{
+  margin-top:20px;
+}
+.login{
+  padding:0px;
+  margin:0px;
+}
+.form-group{
+  margin-left:-190px;
+}
+.login-form btn btn-primary btn-lg btn-block{
+  margin-left:750px;
+}
+.login-scree {
+  background-color: #1abc9c;
+  min-height: 554px;
+  padding: 123px 199px 33px 306px;
+}
+    </style>
+		<!-- <div class="page-wrap">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">Inventory manager</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  </div>
+                </div>
+              </nav>
+            </div> -->
+    <!-- <h1 class = 'INVEN'>INVENTORY MANAGEMENT</h1> -->
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="#">
+          Inventory manager
+          <!-- Indicator with number -->
+        </a>
+      </li>
+    </ul>
+    <div class="login">
+      <div class="login-scree">
+        <div class="login-icon">
+          <img src="{{url_for('static',filename = 'MAC.ico')}}" alt="Welcome to inventory manager" />
+          <h4><b>Inventory manager</b></h4>
+        </div>
+        <form name="myForm" action="/login" onsubmit="return validateform()" method="post" required>
+        <div class="login-form">
+          <div class="form-group">
+            <input type="text" name = 'username' class="form-control login-field" value="" placeholder="Enter your name" id="login-name" />
+            <label class="login-field-icon fui-user" for="login-name"></label>
+          </div>
+
+          <div class="form-group">
+            <input type="password" name = 'password' class="form-control login-field" value="" placeholder="Password" id="login-pass" />
+            <label class="login-field-icon fui-lock" for="login-pass"></label>
+          </div>
+
+          
+          
+
+        </form>
+        <center><button id = 'zz' type="submit"  onclick = 'z();' class="btn btn-primary btn-lg btn-block">Login</button></center>
+         <!-- <a class="btn btn-primary btn-lg btn-block" href="#">Log in</a>-->
+        </div>
+      </div>
+    </div>
+    <!-- <form name="myForm" action="/login" onsubmit="return validateform()" method="post" required>
+    <!-- <form id = 'form' action = '/login' method="GET">
+      <div class="mb-3">
+        <input type="text" name = 'username' class="form-control login-field" id='username' placeholder="Username">
+      </div>
+      <div class="mb-3">
+        <input type="text" id = 'password' class="form-control login-field" name = 'password' placeholder="Password">
+      </div> 
+    <div class = 'register'>
+      <center><button id = 'zz' type="submit"  onclick = 'z();' class="btn btn-primary">Login</button></center>
+    </form>
+    <div class="msg">{{ msg }}</div> -->
+     <script type="text/javascript" >var t = 'Signing up...';
+    function validateform(){
+    var user = document.forms["myForm"]["login-name"].value;
+    var pass = document.forms["myForm"]["login-pass"].value;
+    localStorage.removeItem('username')
+  if (user == "") {
+    alert("Enter username");
+    return false;
+  }
+  
+  else if(pass ==""){
+    alert('Enter a password');
+    return false;
+  }
+  else{
+      document.getElementById('zz').innerHTML = t;
+    }
+  var username = document.forms['myForm']['login-name'].value;
+localStorage.setItem('username',username);
+console.log(localStorage.getItem('username'));
+}
+    </script>
+	</body>
+</html>
